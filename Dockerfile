@@ -9,7 +9,7 @@ ARG KEYCLOAK_VERSION="7.0.1"
 RUN mkdir -p ${INSTALL_PATH} && \
     cd ${INSTALL_PATH} && \
     curl -sS https://downloads.jboss.org/keycloak/${KEYCLOAK_VERSION}/keycloak-${KEYCLOAK_VERSION}.tar.gz -o ${INSTALL_PATH}/keycloak-${KEYCLOAK_VERSION}.tar.gz && \
-    tar --strip-components=1 xzvf ${INSTALL_PATH}/keycloak-${KEYCLOAK_VERSION}.tar.gz && \
+    tar xzvf ${INSTALL_PATH}/keycloak-${KEYCLOAK_VERSION}.tar.gz --strip-components=1  && \
     rm -rf ${INSTALL_PATH}/keycloak-${KEYCLOAK_VERSION}.tar.gz
 
 WORKDIR ${INSTALL_PATH}
